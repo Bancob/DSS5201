@@ -2,7 +2,7 @@
 
 ## Research Question
 
-How are coffee drinking habits, brewing preferences, and self-rated coffee expertise associated with monthly coffee spending and willingness to pay among respondents in the coffee survey?
+What demographic, taste-preference, and self-rated expertise factors are associated with higher coffee spending among respondents in the Great American Coffee Taste Test survey?
 
 ## Dataset
 
@@ -15,23 +15,20 @@ The survey contains 4,042 responses and 57 variables covering demographics, brew
 DSS5201/
 ├── data/
 │   └── coffee_survey.csv              # Raw survey data
-├── output/
-│   └── jupyter-notebook/
-│       ├── coffee_project_report.ipynb # Main report notebook
-│       └── coffee_project_report.html  # Exported HTML report
-├── scripts/
-│   └── build_coffee_project_notebook.py
+├── coffee_project_report.ipynb        # Main report notebook
+├── coffee_project_report.html         # Exported HTML report
+├── coffee_project_report.pdf          # Exported PDF report
 ├── README.md
 └── requirements.txt
 ```
 
 ## Visualizations
 
-The report contains three figures:
+The report contains three figures, each addressing one sub-question:
 
-1. **Faceted Heatmap** — Spending shifts upward as daily coffee consumption increases, compared across work arrangements (Home / Hybrid / In person).
-2. **Bubble Chart** — Espresso-leaning preference clusters (brewing method x favorite drink) are more likely to include high spenders.
-3. **Grouped Boxplot** — Higher self-rated expertise aligns with higher willingness to pay, especially for light-roast drinkers.
+1. **Grouped Bar Chart** — Share of respondents spending ≥ $60/month on coffee, by age group and education level.
+2. **Heatmap** — Average monthly coffee spending across the 5 × 5 matrix of home brewing methods and favorite drinks.
+3. **Line Chart** — Share of respondents with high equipment investment (≥ $500) and high monthly spending (≥ $60), plotted against self-rated coffee expertise (1–10).
 
 ## Setup and Reproduction
 
@@ -40,7 +37,7 @@ The report contains three figures:
 pip install -r requirements.txt
 
 # Open the notebook
-jupyter notebook output/jupyter-notebook/coffee_project_report.ipynb
+jupyter notebook coffee_project_report.ipynb
 ```
 
 The notebook will automatically load data from `data/coffee_survey.csv` if present, or fall back to downloading from the TidyTuesday GitHub repository.
