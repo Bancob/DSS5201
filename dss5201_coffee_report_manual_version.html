@@ -7543,7 +7543,7 @@ a.anchor-link {
 <p>For this project, we use <code>coffee_survey.csv</code>, a dataset released by TidyTuesday on 14 May 2024. The dataset comes from The Great American Coffee Taste Test, an online tasting event organised by James Hoffmann and Cometeer in October 2023 (Hoffmann, 2023). In this event, around 4,000 people in the United States brewed four blind-labelled coffees at home while following a YouTube livestream, and then filled in a survey about their demographics, brewing habits, favourite drinks, self-rated coffee expertise, and monthly coffee spending. The final dataset contains 4,042 responses and 57 variables. An early summary of the survey noted that respondents were more likely to be younger, male, and interested in lighter roasts, compared with the broader population of coffee drinkers (McKeon Aloe, 2023). The dataset was also later used by Maven Analytics (2024) as an open visualisation challenge.</p>
 <p>In this report, we are mainly interested in coffee spending. More specifically, we want to see which demographic factors, coffee preferences, and self-rated expertise are linked to higher spending in this sample. We break this into three smaller questions:</p>
 <ol>
-<li><strong>Demographics.</strong> How do age and education level relate to monthly coffee spending?</li>
+<li><strong>Demographics.</strong> How do age relate to monthly coffee spending?</li>
 <li><strong>Brewing method and favourite drink.</strong> Which combinations are associated with higher spending?</li>
 <li><strong>Self-rated expertise.</strong> Does higher expertise predict more spending on equipment, on coffee, or on both?</li>
 </ol>
@@ -7941,7 +7941,7 @@ dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A proportion stack histogram is used to illustrate the relationship between age and the total amount spent on coffee per month. First, the number of respondents for each age range was checked, and any age range that does not have enough data are removed from the data. Then the age ranges are sorted so it is easier to interpet in the plot. The variables of total_spend are collapsed into three categories, again for easier visualisation.</p>
+<p>A proportion stacked histogram is used to show the relative distribution of spending categories within each age group. Respondents aged under 18 were removed due to the very small sample size (fewer than 15 responses). The six original spending brackets were collapsed into three groups for clearer comparison: &lt;$40 (combining &lt;$20 and $20–$40), $40–$80 (combining $40–$60 and $60–$80), and &gt;$80 (combining $80–$100 and &gt;$100). Age groups are sorted in ascending order for easier interpretation.</p>
 </div>
 </div>
 </div>
@@ -7985,7 +7985,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#drop age &lt;18</span>
@@ -8007,7 +8007,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>array(['18-24 years old', '25-34 years old', '35-44 years old',
        '45-54 years old', '55-64 years old', '&gt;65 years old'],
@@ -8021,7 +8021,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#aggregate total_spend categories into three categories </span>
@@ -8049,7 +8049,7 @@ Name: count, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># make a relative proportion histogram chart</span>
